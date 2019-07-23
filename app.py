@@ -4,7 +4,7 @@ app =Flask(__name__)
 
 @app.route('/hello')
 def hello():
-	return 'hello'
+	return 'hello to programming world'
 
 @app.route('/Semester')
 def Semester():
