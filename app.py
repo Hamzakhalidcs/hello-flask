@@ -2,6 +2,10 @@ from flask import Flask,request,jsonify
 
 app =Flask(__name__)
 
+@app.route('/')
+def index():
+    return "Hello, World!"
+
 @app.route('/hello')
 def hello():
 	return 'hello to programming world'
@@ -18,6 +22,7 @@ def GPA():
 
 @app.route('/post_data', methods=['GET','POST'])
 def post_data():
+	print('Hello from post data function')
 	req_data =request.get_json()
 	print(req_data)
 	if 'contact' not in req_data:
@@ -32,6 +37,7 @@ def post_data():
 	first_name = req_data['firstName']
 	last_name = req_data ['lastName']
 	phone =req_data['contact']
+	print('Returning Data')
 	return jsonify({
 		"First Name" :first_name,
 		"Last Name" : last_name,
