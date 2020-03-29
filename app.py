@@ -22,6 +22,7 @@ def GPA():
 
 @app.route('/post_data', methods=['GET','POST'])
 def post_data():
+	return 'Request Reached'
 	print('Hello from post data function')
 	req_data =request.get_json()
 	print(req_data)
